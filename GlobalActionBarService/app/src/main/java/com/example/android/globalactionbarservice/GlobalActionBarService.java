@@ -19,6 +19,7 @@ import android.accessibilityservice.GestureDescription;
 import android.graphics.Path;
 import android.graphics.PixelFormat;
 import android.media.AudioManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,10 +30,17 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import java.util.ArrayDeque;
+import java.util.Calendar;
 import java.util.Deque;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
+
+import static android.view.accessibility.AccessibilityEvent.TYPE_VIEW_SCROLLED;
 
 public class GlobalActionBarService extends AccessibilityService {
     FrameLayout mLayout;
+    boolean shouldScroll = false;
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
@@ -56,110 +64,69 @@ public class GlobalActionBarService extends AccessibilityService {
         lp.flags |= WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
         lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-        lp.gravity = Gravity.TOP;
+        lp.gravity = Gravity.BOTTOM;
         LayoutInflater inflater = LayoutInflater.from(this);
         inflater.inflate(R.layout.action_bar, mLayout);
         wm.addView(mLayout, lp);
 
 
 
-        configurePowerButton();
-
-        configureVolumeButton();
-
-        configureScrollButton();
-
-        configureExitButton();
-
-        configureSwipeButton();
 
 
-    }
 
 
-    private void configurePowerButton() {
-        Button powerButton = (Button) mLayout.findViewById(R.id.power);
-        powerButton.setOnClickListener(new View.OnClickListener() {
+        Button scrollOn= (Button) mLayout.findViewById(R.id.start);
+        scrollOn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                performGlobalAction(GLOBAL_ACTION_POWER_DIALOG);
+                shouldScroll = true;
+//                configureSwipeButton();
             }
         });
-    }
 
-    private void configureExitButton() {
-        Button exitButton = (Button) mLayout.findViewById(R.id.exit);
-        exitButton.setOnClickListener(new View.OnClickListener() {
+
+        Button scrollOff= (Button) mLayout.findViewById(R.id.start);
+        scrollOff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                performGlobalAction(GLOBAL_ACTION_HOME);
+                shouldScroll = false;
+
             }
         });
-    }
 
 
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
 
-
-
-
-    private void configureVolumeButton() {
-        Button volumeUpButton = (Button) mLayout.findViewById(R.id.volume_up);
-        volumeUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
-                audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
-                        AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+            public void run() {
+                configureSwipeButton();
+
             }
-        });
-    }
+
+        }, 0, 30000);
 
 
-
-    private AccessibilityNodeInfo findScrollableNode(AccessibilityNodeInfo root) {
-        Deque<AccessibilityNodeInfo> deque = new ArrayDeque<>();
-        deque.add(root);
-        while (!deque.isEmpty()) {
-            AccessibilityNodeInfo node = deque.removeFirst();
-            if (node.getActionList().contains(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_FORWARD)) {
-                return node;
-            }
-            for (int i = 0; i < node.getChildCount(); i++) {
-                deque.addLast(node.getChild(i));
-            }
-        }
-        return null;
-    }
-
-
-    private void configureScrollButton() {
-        Button scrollButton = (Button) mLayout.findViewById(R.id.scroll);
-        scrollButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AccessibilityNodeInfo scrollable = findScrollableNode(getRootInActiveWindow());
-                if (scrollable != null) {
-                    scrollable.performAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_FORWARD.getId());
-                }
-            }
-        });
     }
 
 
     private void configureSwipeButton() {
-        Button swipeButton = (Button) mLayout.findViewById(R.id.swipe);
-        swipeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Path swipePath = new Path();
-                swipePath.moveTo(1000, 1000);
-                swipePath.lineTo(100, 1000);
-                GestureDescription.Builder gestureBuilder = new GestureDescription.Builder();
-                gestureBuilder.addStroke(new GestureDescription.StrokeDescription(swipePath, 0, 500));
-                dispatchGesture(gestureBuilder.build(), null, null);
-            }
-        });
+            Path swipePath = new Path();
+            swipePath.moveTo(1000, 1000);
+            swipePath.lineTo(1000, 100);
+            GestureDescription.Builder gestureBuilder = new GestureDescription.Builder();
+            gestureBuilder.addStroke(new GestureDescription.StrokeDescription(swipePath, 0, 500));
+            dispatchGesture(gestureBuilder.build(), null, null);
+        
+
     }
+
+
+
+
+
+
+
 
 
 
