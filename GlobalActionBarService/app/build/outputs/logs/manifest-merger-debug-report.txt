@@ -1,0 +1,104 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:18:1-33:12
+INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:18:1-33:12
+INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:18:1-33:12
+INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:18:1-33:12
+MERGED from [com.android.support:appcompat-v7:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/04f6b2257913426c47792784bc2de87d/appcompat-v7-24.2.1/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-v4:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/50df80f8b7fe330274093c990c063e5f/support-v4-24.2.1/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/5b985092252e20d2770e67bec7f2ae08/animated-vector-drawable-24.2.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-vector-drawable:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/c2c43cd9b8ca0795008aefd010d706fe/support-vector-drawable-24.2.1/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-fragment:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/a680538d4ea1018977c6781b3a58deff/support-fragment-24.2.1/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-media-compat:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/b8a02b3a8e509b2d5be57ad7526a5367/support-media-compat-24.2.1/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-utils:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/9ad359d5e8247b968b92f38f6d4d5384/support-core-utils-24.2.1/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-ui:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/8b0cc114e047301d7ea70b578a51bf65/support-core-ui-24.2.1/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-compat:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/c33bc299224b9509d75dd0821ea95aac/support-compat-24.2.1/AndroidManifest.xml:17:1-27:12
+INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:18:1-33:12
+INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:18:1-33:12
+INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:18:1-33:12
+	package
+		ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:19:5-57
+		INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+		INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+		ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:18:1-33:12
+		INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+		ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:18:1-33:12
+		INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:18:11-69
+application
+ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:21:5-32:19
+MERGED from [com.android.support:appcompat-v7:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/04f6b2257913426c47792784bc2de87d/appcompat-v7-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/04f6b2257913426c47792784bc2de87d/appcompat-v7-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/50df80f8b7fe330274093c990c063e5f/support-v4-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/50df80f8b7fe330274093c990c063e5f/support-v4-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/5b985092252e20d2770e67bec7f2ae08/animated-vector-drawable-24.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/5b985092252e20d2770e67bec7f2ae08/animated-vector-drawable-24.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/c2c43cd9b8ca0795008aefd010d706fe/support-vector-drawable-24.2.1/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/c2c43cd9b8ca0795008aefd010d706fe/support-vector-drawable-24.2.1/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-fragment:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/a680538d4ea1018977c6781b3a58deff/support-fragment-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/a680538d4ea1018977c6781b3a58deff/support-fragment-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/b8a02b3a8e509b2d5be57ad7526a5367/support-media-compat-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/b8a02b3a8e509b2d5be57ad7526a5367/support-media-compat-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/9ad359d5e8247b968b92f38f6d4d5384/support-core-utils-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/9ad359d5e8247b968b92f38f6d4d5384/support-core-utils-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/8b0cc114e047301d7ea70b578a51bf65/support-core-ui-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/8b0cc114e047301d7ea70b578a51bf65/support-core-ui-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/c33bc299224b9509d75dd0821ea95aac/support-compat-24.2.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/c33bc299224b9509d75dd0821ea95aac/support-compat-24.2.1/AndroidManifest.xml:25:5-20
+service#com.example.android.globalactionbarservice.GlobalActionBarService
+ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:22:9-31:19
+	android:permission
+		ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:24:13-79
+	android:name
+		ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:23:13-51
+intent-filter#action:name:android.accessibilityservice.AccessibilityService
+ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:25:13-27:29
+action#android.accessibilityservice.AccessibilityService
+ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:26:17-92
+	android:name
+		ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:26:25-89
+meta-data#android.accessibilityservice
+ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:28:13-30:69
+	android:resource
+		ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:30:17-66
+	android:name
+		ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:29:17-60
+uses-sdk
+INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/04f6b2257913426c47792784bc2de87d/appcompat-v7-24.2.1/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/04f6b2257913426c47792784bc2de87d/appcompat-v7-24.2.1/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/50df80f8b7fe330274093c990c063e5f/support-v4-24.2.1/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/50df80f8b7fe330274093c990c063e5f/support-v4-24.2.1/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/5b985092252e20d2770e67bec7f2ae08/animated-vector-drawable-24.2.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/5b985092252e20d2770e67bec7f2ae08/animated-vector-drawable-24.2.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/c2c43cd9b8ca0795008aefd010d706fe/support-vector-drawable-24.2.1/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-vector-drawable:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/c2c43cd9b8ca0795008aefd010d706fe/support-vector-drawable-24.2.1/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-fragment:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/a680538d4ea1018977c6781b3a58deff/support-fragment-24.2.1/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/a680538d4ea1018977c6781b3a58deff/support-fragment-24.2.1/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/b8a02b3a8e509b2d5be57ad7526a5367/support-media-compat-24.2.1/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/b8a02b3a8e509b2d5be57ad7526a5367/support-media-compat-24.2.1/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/9ad359d5e8247b968b92f38f6d4d5384/support-core-utils-24.2.1/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/9ad359d5e8247b968b92f38f6d4d5384/support-core-utils-24.2.1/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/8b0cc114e047301d7ea70b578a51bf65/support-core-ui-24.2.1/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/8b0cc114e047301d7ea70b578a51bf65/support-core-ui-24.2.1/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/c33bc299224b9509d75dd0821ea95aac/support-compat-24.2.1/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/c33bc299224b9509d75dd0821ea95aac/support-compat-24.2.1/AndroidManifest.xml:21:5-23:58
+INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:24.2.1] /home/israel/.gradle/caches/transforms-2/files-2.1/04f6b2257913426c47792784bc2de87d/appcompat-v7-24.2.1/AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+		ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+		INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+		ADDED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+		INJECTED from /home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml

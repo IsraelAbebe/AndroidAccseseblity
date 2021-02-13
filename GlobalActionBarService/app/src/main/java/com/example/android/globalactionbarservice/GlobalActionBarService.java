@@ -15,10 +15,14 @@
 package com.example.android.globalactionbarservice;
 
 import android.accessibilityservice.AccessibilityService;
+import android.accessibilityservice.AccessibilityServiceInfo;
 import android.accessibilityservice.GestureDescription;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Path;
 import android.graphics.PixelFormat;
 import android.media.AudioManager;
+
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -35,16 +39,21 @@ import java.util.Deque;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
+import java.util.List;
+
 
 import static android.view.accessibility.AccessibilityEvent.TYPE_VIEW_SCROLLED;
 
+//public class GlobalActionBarService extends AccessibilityService {
+//    FrameLayout mLayout;
+//    boolean shouldScroll = false;
+
 public class GlobalActionBarService extends AccessibilityService {
     FrameLayout mLayout;
-    boolean shouldScroll = false;
+    Context ctx=this;
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-
     }
 
     @Override
@@ -71,62 +80,101 @@ public class GlobalActionBarService extends AccessibilityService {
 
 
 
+        configurePowerButton();
 
+        configureOpenButton();
 
-
-
-        Button scrollOn= (Button) mLayout.findViewById(R.id.start);
-        scrollOn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shouldScroll = true;
-//                configureSwipeButton();
-            }
-        });
-
-
-        Button scrollOff= (Button) mLayout.findViewById(R.id.start);
-        scrollOff.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shouldScroll = false;
-
-            }
-        });
-
-
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-
-            @Override
-            public void run() {
-                configureSwipeButton();
-
-            }
-
-        }, 0, 30000);
-
+        configureSwipeButton();
 
     }
+
+
+    private void configurePowerButton() {
+        Button powerButton = (Button) mLayout.findViewById(R.id.feres);
+        powerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent i = ctx.getPackageManager().getLaunchIntentForPackage("com.feres.user");
+                    ctx.startActivity(i);
+                } catch (Exception e) {
+
+                }
+            }
+        });
+
+    }
+
+
+//        Button scrollOff= (Button) mLayout.findViewById(R.id.start);
+//        scrollOff.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                shouldScroll = false;
+//
+//            }
+//        });
+
+//
+//        Timer timer = new Timer();
+//        timer.scheduleAtFixedRate(new TimerTask() {
+//
+//            @Override
+//            public void run() {
+//                configureSwipeButton();
+//
+//            }
+//
+//        }, 0, 30000);
+
+
+    private void configureOpenButton(){
+        Button OpenButton = (Button) mLayout.findViewById(R.id.open);
+        OpenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent i = ctx.getPackageManager().getLaunchIntentForPackage("com.multibrains.taxi.passenger.ridepassengeret");
+                    ctx.startActivity(i);
+                } catch (Exception e) {
+
+                }
+            }
+        });
+    }
+
+
+//    private void configureSwipeButton() {
+//            Path swipePath = new Path();
+//            swipePath.moveTo(1000, 1000);
+//            swipePath.lineTo(1000, 100);
+//            GestureDescription.Builder gestureBuilder = new GestureDescription.Builder();
+//            gestureBuilder.addStroke(new GestureDescription.StrokeDescription(swipePath, 0, 500));
+//            dispatchGesture(gestureBuilder.build(), null, null);
+//
+//
+//    }
+
 
 
     private void configureSwipeButton() {
-            Path swipePath = new Path();
-            swipePath.moveTo(1000, 1000);
-            swipePath.lineTo(1000, 100);
-            GestureDescription.Builder gestureBuilder = new GestureDescription.Builder();
-            gestureBuilder.addStroke(new GestureDescription.StrokeDescription(swipePath, 0, 500));
-            dispatchGesture(gestureBuilder.build(), null, null);
-        
+        Button swipeButton = (Button) mLayout.findViewById(R.id.swipe);
+        swipeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                AccessibilityNodeInfo nodeInfo;
+                nodeInfo = (AccessibilityNodeInfo) view.getAccessibilityNodeProvider().createAccessibilityNodeInfo(view.getId());
+                List<AccessibilityNodeInfo> list = nodeInfo
+                        .findAccessibilityNodeInfosByViewId("com.multibrains.taxi.passenger.ridepassengeret:id/pickup_location_set_pickup");
+//
+                for (AccessibilityNodeInfo node : list) {
+                    node.performAction(AccessibilityNodeInfo.ACTION_CLICK);
+                }
+
+            }
+        });
     }
-
-
-
-
-
-
-
 
 
 
