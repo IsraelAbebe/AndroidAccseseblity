@@ -15,10 +15,13 @@
 package com.example.android.globalactionbarservice;
 
 import android.accessibilityservice.AccessibilityService;
+import android.accessibilityservice.AccessibilityServiceInfo;
 import android.accessibilityservice.GestureDescription;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Path;
 import android.graphics.PixelFormat;
-import android.media.AudioManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,13 +33,14 @@ import android.widget.FrameLayout;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.List;
 
 public class GlobalActionBarService extends AccessibilityService {
     FrameLayout mLayout;
+    Context ctx=this;
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-
     }
 
     @Override
@@ -65,7 +69,7 @@ public class GlobalActionBarService extends AccessibilityService {
 
         configurePowerButton();
 
-        configureVolumeButton();
+        configureOpenButton();
 
         configureScrollButton();
 
@@ -78,11 +82,16 @@ public class GlobalActionBarService extends AccessibilityService {
 
 
     private void configurePowerButton() {
-        Button powerButton = (Button) mLayout.findViewById(R.id.power);
+        Button powerButton = (Button) mLayout.findViewById(R.id.feres);
         powerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                performGlobalAction(GLOBAL_ACTION_POWER_DIALOG);
+                try {
+                    Intent i = ctx.getPackageManager().getLaunchIntentForPackage("com.feres.user");
+                    ctx.startActivity(i);
+                } catch (Exception e) {
+
+                }
             }
         });
     }
@@ -102,14 +111,17 @@ public class GlobalActionBarService extends AccessibilityService {
 
 
 
-    private void configureVolumeButton() {
-        Button volumeUpButton = (Button) mLayout.findViewById(R.id.volume_up);
-        volumeUpButton.setOnClickListener(new View.OnClickListener() {
+    private void configureOpenButton() {
+        Button OpenButton = (Button) mLayout.findViewById(R.id.open);
+        OpenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
-                audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
-                        AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+                try {
+                    Intent i = ctx.getPackageManager().getLaunchIntentForPackage("com.multibrains.taxi.passenger.ridepassengeret");
+                    ctx.startActivity(i);
+                } catch (Exception e) {
+
+                }
             }
         });
     }
@@ -151,12 +163,16 @@ public class GlobalActionBarService extends AccessibilityService {
         swipeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Path swipePath = new Path();
-                swipePath.moveTo(1000, 1000);
-                swipePath.lineTo(100, 1000);
-                GestureDescription.Builder gestureBuilder = new GestureDescription.Builder();
-                gestureBuilder.addStroke(new GestureDescription.StrokeDescription(swipePath, 0, 500));
-                dispatchGesture(gestureBuilder.build(), null, null);
+
+                AccessibilityNodeInfo nodeInfo;
+                nodeInfo = (AccessibilityNodeInfo) view.getAccessibilityNodeProvider().createAccessibilityNodeInfo(view.getId());
+                List<AccessibilityNodeInfo> list = nodeInfo
+                        .findAccessibilityNodeInfosByViewId("com.multibrains.taxi.passenger.ridepassengeret:id/pickup_location_set_pickup");
+//
+                for (AccessibilityNodeInfo node : list) {
+                    node.performAction(AccessibilityNodeInfo.ACTION_CLICK);
+                }
+
             }
         });
     }

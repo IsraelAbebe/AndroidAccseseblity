@@ -1,0 +1,55 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3 Copyright 2016 Google Inc.
+4
+5 Licensed under the Apache License, Version 2.0 (the "License");
+6 you may not use this file except in compliance with the License.
+7 You may obtain a copy of the License at
+8
+9      http://www.apache.org/licenses/LICENSE-2.0
+10
+11 Unless required by applicable law or agreed to in writing, software
+12 distributed under the License is distributed on an "AS IS" BASIS,
+13 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+14 See the License for the specific language governing permissions and
+15 limitations under the License.
+16-->
+17<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+18    package="com.example.android.demoservice"
+19    android:versionCode="1"
+20    android:versionName="1.0" >
+21
+22    <uses-sdk
+23        android:minSdkVersion="24"
+23-->/home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+24        android:targetSdkVersion="24" />
+24-->/home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml
+25
+26    <application
+26-->/home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:21:5-32:19
+27        android:debuggable="true"
+28        android:extractNativeLibs="false"
+29        android:testOnly="true" >
+30        <service
+30-->/home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:22:9-31:19
+31            android:name="com.example.android.globalactionbarservice.GlobalActionBarService"
+31-->/home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:23:13-51
+32            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+32-->/home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:24:13-79
+33            <intent-filter>
+33-->/home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:25:13-27:29
+34                <action android:name="android.accessibilityservice.AccessibilityService" />
+34-->/home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:26:17-92
+34-->/home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:26:25-89
+35            </intent-filter>
+36
+37            <meta-data
+37-->/home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:28:13-30:69
+38                android:name="android.accessibilityservice"
+38-->/home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:29:17-60
+39                android:resource="@xml/global_action_bar_service" />
+39-->/home/israel/Documents/projects/basic-android-accessibility/GlobalActionBarService/app/src/main/AndroidManifest.xml:30:17-66
+40        </service>
+41    </application>
+42
+43</manifest>
